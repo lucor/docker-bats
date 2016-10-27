@@ -8,7 +8,8 @@ ENV BATS_VERSION "0.4.0"
 
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community  add \
         bash \
-        curl
+        curl \
+        zip
 
 RUN mkdir -p /tmp/bats && cd /tmp/bats \
     && curl -sSL https://github.com/sstephenson/bats/archive/v$BATS_VERSION.tar.gz -o bats.tgz \
