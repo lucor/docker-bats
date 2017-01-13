@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.5
 
 MAINTAINER Luca Corbo <lu.corbo@gmail.com>
 
@@ -10,14 +10,14 @@ RUN apk --no-cache add \
         bash \
         curl \
         zip \
-        unzip
+        unzip \
+        tar \
+        gzip
 
-RUN mkdir -p /tmp/bats && cd /tmp/bats \
-    && curl -sSL https://github.com/sstephenson/bats/archive/v$BATS_VERSION.tar.gz -o bats.tgz \
-    && tar -zxf bats.tgz \
-    && cd bats-$BATS_VERSION \
-    && /bin/bash ./install.sh /usr/local \
-    && cd / \
-    && rm -rf /tmp/bats
+RUN curl -sSL https://github.com/sstephenson/bats/archive/v$BATS_VERSION.tar.gz -o /tmp/bats.tgz \
+    && tar -zxf /tmp/bats.tgz -C /tmp \
+    && /bin/bash /tmp/bats-$BATS_VERSION/install.sh /usr/local \
+    && rm -rf /tmp/*
 
-CMD ["/usr/local/bin/bats"]
+ENTRYPOINT ["/usr/local/bin/bats"]
+CMD ["--help"]
