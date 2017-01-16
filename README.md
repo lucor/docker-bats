@@ -6,8 +6,22 @@ A lightweight Docker image for [Bash Automated Testing System (bats)](https://gi
 
 It provides:
 
-  - bats `v0.4.0`
   - alpine `v3.5`
+  - bats `v0.4.0`
+
+and the following helpers:
+
+- [bats-asserts](https://github.com/ztombol/bats-assert/blob/v0.3.0/src) v0.3.0
+- [bats-support](https://github.com/ztombol/bats-support/blob/v0.3.0/src) v0.3.0
+- [bats-file](https://github.com/ztombol/bats-file/blob/v0.2.0/src) v0.2.0
+
+## Helpers loading
+
+All helpers are stored under the `/usr/local/lib/bats/` folder.
+
+To load all helpers, add in your bats test the following line:
+ 
+    load '/usr/local/lib/bats/load.bash'
 
 ## Examples
 
@@ -21,7 +35,7 @@ It provides:
 
 ```
   docker run --rm -ti \
-    -v $(pwd):/app \
+    -v $(pwd):/tests \
     lucor/bats \
     your_test.bats
 ```
