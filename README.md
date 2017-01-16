@@ -11,9 +11,9 @@ It provides:
 
 and the following helpers:
 
-- [bats-asserts](https://github.com/ztombol/bats-assert/blob/v0.3.0/src) v0.3.0
-- [bats-support](https://github.com/ztombol/bats-support/blob/v0.3.0/src) v0.3.0
-- [bats-file](https://github.com/ztombol/bats-file/blob/v0.2.0/src) v0.2.0
+- [bats-support](https://github.com/ztombol/bats-support) v0.3.0
+- [bats-asserts](https://github.com/ztombol/bats-assert) v0.3.0
+- [bats-file](https://github.com/ztombol/bats-file) v0.2.0
 
 ## Helpers loading
 
