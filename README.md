@@ -28,7 +28,7 @@ To load all helpers, add in your bats test the following line:
 ### Display the bats help
 
 ```
-  docker run --rm -ti lucor/bats
+  docker run --rm -ti lucor/bats bats
 ```
 
 ### Run a bats test
@@ -37,5 +37,5 @@ To load all helpers, add in your bats test the following line:
   docker run --rm -ti \
     -v $(pwd):/tests \
     lucor/bats \
-    your_test.bats
+    bats your_test.bats
 ```

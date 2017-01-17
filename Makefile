@@ -10,4 +10,4 @@ build:
 		.
 
 test:
-	docker run --rm -t -v $(CURDIR)/tests:/tests lucor/bats /tests/test_image.bats
+	docker run --rm -t -v $(CURDIR)/tests:/tests lucor/bats bats /tests/test_image.bats

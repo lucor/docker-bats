@@ -36,5 +36,4 @@ RUN rm -rf /tmp/*
 
 COPY resources/load.bash /usr/local/lib/bats/
 
-ENTRYPOINT ["/usr/local/bin/bats"]
-CMD ["--help"]
+CMD ["/usr/local/bin/bats", "--help"]
